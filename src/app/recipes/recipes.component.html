@@ -3,7 +3,8 @@
         <app-recipe-list ></app-recipe-list>
     </div>
     <div class="col-md-7">
-        <app-recipe-detail *ngIf="selectedRecipe$ | async; else noData"></app-recipe-detail>
+        <app-recipe-detail 
+        [recipe]="selectedRecipe" *ngIf="selectedRecipe$ | async as selectedRecipe; else noData"></app-recipe-detail>
         <ng-template #noData>
             <p>Please select a Recipe!</p>
         </ng-template>
