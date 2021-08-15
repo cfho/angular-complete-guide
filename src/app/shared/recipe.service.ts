@@ -16,7 +16,7 @@ export class RecipeService {
       new Ingredient('meat', 4),
       new Ingredient('French Fries', 20)
     ]),
-    new Recipe('A brand New Recipe', 'This is a test', 'https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.18172-8/12493980_1685073668444811_3899773754661116169_o.jpg?_nc_cat=107&ccb=1-3&_nc_sid=e3f864&_nc_ohc=Iip-pRYYRMMAX8paUac&_nc_ht=scontent.ftpe3-2.fna&oh=f431a907f33b51cbeaf1146bee6f2f27&oe=60E2EB59', [
+    new Recipe('A brand New Recipe', 'This is a test', 'https://cdn.walkerland.com.tw/images/upload/poi/p466/m46192/881942719e91d9a066e4675609ebe978523943e2.jpg', [
       new Ingredient('Buns', 2),
       new Ingredient('Meat', 1)
     ])
