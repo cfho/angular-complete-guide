@@ -13,6 +13,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { AuthComponent } from './auth/auth.component';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthComponent } from './auth/auth.component';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    AuthComponent
+    AuthComponent,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,
