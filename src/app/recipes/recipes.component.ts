@@ -10,14 +10,14 @@ import { RecipeService } from '../shared/recipe.service';
 })
 export class RecipesComponent implements OnInit {
 
-  selectedRecipe$!: Observable<Recipe>;
+  // selectedRecipe$!: Observable<Recipe>;
 
   constructor(
     private recipeService: RecipeService
   ) { }
 
   ngOnInit(): void {
-    this.selectedRecipe$ = this.recipeService.selectedRecipe
+    // this.selectedRecipe$ = this.recipeService.selectedRecipe
     }
   
 
