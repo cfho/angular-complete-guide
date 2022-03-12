@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { Recipe } from 'src/app/shared/recipe.model';
@@ -8,27 +9,32 @@ import { ShoppingListService } from 'src/app/shared/shopping-list.service';
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
-  styleUrls: ['./recipe-detail.component.scss']
+  styleUrls: ['./recipe-detail.component.scss'],
 })
 export class RecipeDetailComponent implements OnInit {
-
-  @Input() recipe!: Recipe;
+  // @Input() recipe!: Recipe;
+  recipe!: Recipe;
+  id!: number;
 
   // recipe$!: Observable<Recipe>;
   constructor(
     private recipeService: RecipeService,
-    private slServerice: ShoppingListService
-  ) { }
+    private slServerice: ShoppingListService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     // this.recipe$ = this.recipeService.selectedRecipe
+    this.route.params.subscribe((params: Params) => {
+      this.id = params['id'];
+      this.recipe = this.recipeService.getRecipe(this.id);
+    });
   }
 
   addShoppingList(ingredients: Ingredient[]) {
-    ingredients.forEach(ingredient => {
+    ingredients.forEach((ingredient) => {
       console.log(ingredient);
       this.slServerice.addIngredients(ingredient);
-    })
+    });
   }
-
 }
